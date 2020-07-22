@@ -2,13 +2,10 @@ const path = require('path');
 const outputPath = path.resolve(__dirname, 'public');
 
 module.exports = {
-  mode: 'development',
-  devtool: 'inline-source-map',
-
   watchOptions: {
     ignored: /node_modules/
   },
-  entry: './src/scripts/index.js',
+  entry: './src/scripts/index.jsx',
   output: {
     path: outputPath,
     publicPath: "/",
@@ -43,11 +40,8 @@ module.exports = {
       }]
     }]
   },
-  
-  devServer: {
-    contentBase: outputPath,
-    historyApiFallback: true,
-    open: true,
-    watchContentBase: true
+  resolve: {
+    // ここに登録した拡張子は import時に省略できる
+    extensions: ['*', '.js', '.jsx']
   }
 };
