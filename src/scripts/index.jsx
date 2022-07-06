@@ -1,23 +1,18 @@
 import '../sass/style.sass';
 import React from "react";
-import ReactDOM from 'react-dom'
-import Top from './pages/top'
+import ReactDOM from 'react-dom/client'
+import Top from './pages/top.jsx'
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-class App extends React.Component{
-    render() {
-        return (
-            <Router>
-                <Switch>
-                    <Route path="/" exact component={Top} />
-                </Switch>
-            </Router>
-        )
-    }
-}
+const root = ReactDOM.createRoot(
+  document.getElementById("root")
+);
 
-ReactDOM.render(
-    <App/>,
-    document.getElementById('app')
+root.render(
+    <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<Top/>} />
+        </Routes>
+    </BrowserRouter>
 );
