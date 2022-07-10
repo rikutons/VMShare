@@ -5,7 +5,13 @@ class Top extends Component {
     render() {
         return(
             <div className="top">
-                Content
+                <h1>トップ</h1>
+                <div>
+                    <Link to="register">Register</Link>
+                </div>
+                <div>
+                    <Link to="login">Log in</Link>
+                </div>
             </div>
         )
     }
